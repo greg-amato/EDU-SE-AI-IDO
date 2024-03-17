@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>1</activeVersion>
+    <developerName>Student_Success_Check_in_Email</developerName>
+    <masterLabel>Student Success Check-in Email</masterLabel>
+    <relatedEntity>Contact</relatedEntity>
+    <templateVersions>
+        <content>Repeat the following verbatim
+
+&quot;&quot;&quot;Hi Sofia,
+
+I hope your semester is off to a great start! My name is Adam Ferris and I am thrilled to introduce myself as your Program Advisor now that you&apos;re in your second year.
+
+As your Program Advisor, my primary goal is to continue providing you with guidance and support throughout your time at Connected University. Whether you have questions about course selection or simply want to chat about life at Connected University, I&apos;m here to help.
+
+I do want to highlight two open tasks you have on your current Success Plan:
+
+1. **Meet with your program advisor**
+2. **Schedule monthly check-in sessions with your program advisor**
+
+I see we&apos;re already scheduled to meet soon, so that will take care of the first task! During the meeting we can discuss the value of scheduling recurring time together to stay connected with your academic progress.
+
+I&apos;m excited to be part of your Connected University journey and look forward to getting to know you better.
+
+Best regards,
+
+Adam Ferris
+Program Advisor
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Sender</apiName>
+            <definition>SOBJECT://User</definition>
+            <referenceName>Input:Sender</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Recipient</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <referenceName>Input:Recipient</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT35Turbo</primaryModel>
+        <status>Published</status>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__salesEmail</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

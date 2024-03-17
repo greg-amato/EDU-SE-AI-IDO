@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Major_Donor_Meeting_Preparation</developerName>
+    <masterLabel>Major Donor Meeting Preparation</masterLabel>
+    <templateVersions>
+        <content>As the Major Gift Officer at Connected University, prepare a comprehensive briefing for the upcoming meeting with Riley Hernandez. The briefing should start with a personalized greeting that acknowledges his profound impact on our community. It should provide a succinct yet impactful overview of the measurable outcomes resulting from his generosity, a tailored discussion outline for our key topics that resonate with his passions, and strategic engagement questions. Incorporate specific statistics and testimonials to illustrate past successes and future potential. Emphasize the alignment of the new initiatives with Riley&apos;s interests and the mutual benefits of continued partnership, all while maintaining the persona of a knowledgeable and enthusiastic Major Gift Officer.
+
+Context Section 1: Donor Profile
+&quot;&quot;&quot;
+- Name: Riley Hernandez
+- Alma Mater: Connected University
+- Graduation Year: 2010
+- Degree: B.S. in Computer Science
+- Occupation: Founder and CEO of TechInnovate, a leading software development company
+- Interests: Technology in education, renewable energy, mentorship programs
+
+- Previous Donations:$50,000 to the Computer Science Department for scholarships in 2018. This led to a 20% increase in scholarship recipients&apos; graduation rates.
+$75,000 to the university&apos;s renewable energy research initiative in 2020, contributing to the development of two patent-pending renewable energy solutions.
+
+- Engagement: Attendance at 90% of university events over the past five years, with a focus on technology and innovation.
+Keynote speaker at the 2022 Connected University Tech Conference, rated as the top speaker by 85% of attendees.
+Mentors 5 students annually in the entrepreneurship program, with 3 mentees successfully launching startups.
+&quot;&quot;&quot;
+
+Context Section 2: Meeting Objectives
+&quot;&quot;&quot;
+- Purpose: To discuss Riley&apos;s continued support for the university, focusing on upcoming projects that align with his interests in technology and renewable energy.
+- Key Topics:Impact update of Riley&apos;s previous donations, with specific focus on metrics and testimonials.
+- Introduction to the new Technology in Education initiative, aiming to reduce the technology access gap by 50% in underrepresented communities.
+- Exploration of naming opportunities in the new innovation lab, expected to incubate 10-15 student startups annually.
+- Discussion on establishing a TechInnovate Scholarship for Women in STEM, targeting to increase female enrollment in STEM fields by 25% over the next five years.
+&quot;&quot;&quot;
+
+Context Section 3: Personalization Strategies
+&quot;&quot;&quot;
+- Acknowledgment: Customized thank you for Riley’s transformative contributions, emphasizing specific outcomes and personal stories where his impact was felt most.
+- Engagement: Share achievements of scholarship recipients and research breakthroughs as direct results of his support, including video testimonials.
+- Vision Sharing: Present a compelling vision for the Technology in Education initiative, with data-driven projections on its impact.
+- Partnership Opportunity: Propose a mentorship and internship program partnership with TechInnovate, showcasing potential benefits and alignment with Riley&apos;s passion for nurturing the next generation of tech leaders.
+&quot;&quot;&quot;
+
+</content>
+        <inputs>
+            <apiName>Account</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>Account</masterLabel>
+            <referenceName>Input:Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Draft</status>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

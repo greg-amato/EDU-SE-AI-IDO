@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersion>1</activeVersion>
+    <developerName>Summarize_Account_Meeting_Notes</developerName>
+    <masterLabel>Summarize Account Meeting Notes</masterLabel>
+    <templateVersions>
+        <content>Summarize the provided &quot;Interaction Summaries&quot; following my instructions explicitly:
+
+INSTRUCTIONS
+&quot;&quot;&quot;
+- Your target audience is a University Student Success Advisor
+- Do create any new information or data
+- Group Interactions with similar Titles
+- Use paragraph form not bullets
+- Make it easy to read.
+- Focus on Titles, Interaction Names, and Meeting Notes, but use other fields for context where appropriate
+- Try not to mention field names explicitly.
+- Do not begin with an introduction sentence
+- Conclude with a bullet point list of key takeaways or recommended actions to consider
+&quot;&quot;&quot;
+
+Interaction Summaries:
+&quot;&quot;&quot;
+{!$Flow:EDU_AI_Summarize_Account_Interaction_Summaries.Prompt}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Account</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>Account</masterLabel>
+            <referenceName>Input:Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <templateDataProviders>
+            <definition>flow://EDU_AI_Summarize_Account_Interaction_Summaries</definition>
+            <parameters>
+                <definition>SOBJECT://Account</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Account</parameterName>
+                <valueExpression>{!$Input:Account}</valueExpression>
+            </parameters>
+            <referenceName>Flow:EDU_AI_Summarize_Account_Interaction_Summaries</referenceName>
+        </templateDataProviders>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <templateVersions>
+        <content>Summarize the provided &quot;Interaction Summaries&quot; following my instructions explicitly:
+
+INSTRUCTIONS
+&quot;&quot;&quot;
+- Your target audience is a University Student Success Advisor
+- Do create any new information or data
+- Group Interactions with similar Titles
+- Use paragraph form not bullets
+- Make it easy to read.
+- Focus on Titles, Interaction Names, and Meeting Notes, but use other fields for context where appropriate
+- Try not to mention field names explicitly.
+- Do not begin with an introduction sentence
+- Start with with a bullet point list of key takeaways or recommended actions to consider, THEN provide a section for the &apos;Summarized Meetings&apos;
+&quot;&quot;&quot;
+
+Interaction Summaries:
+&quot;&quot;&quot;
+{!$Flow:EDU_AI_Fake_Summaries.Prompt}
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Account</apiName>
+            <definition>SOBJECT://Account</definition>
+            <masterLabel>Account</masterLabel>
+            <referenceName>Input:Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Draft</status>
+        <templateDataProviders>
+            <definition>flow://EDU_AI_Summarize_Account_Interaction_Summaries</definition>
+            <parameters>
+                <definition>SOBJECT://Account</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Account</parameterName>
+                <valueExpression>{!$Input:Account}</valueExpression>
+            </parameters>
+            <referenceName>Flow:EDU_AI_Summarize_Account_Interaction_Summaries</referenceName>
+        </templateDataProviders>
+        <templateDataProviders>
+            <definition>flow://EDU_AI_Fake_Summaries</definition>
+            <parameters>
+                <definition>SOBJECT://Account</definition>
+                <isRequired>true</isRequired>
+                <parameterName>Account</parameterName>
+                <valueExpression>{!$Input:Account}</valueExpression>
+            </parameters>
+            <referenceName>Flow:EDU_AI_Fake_Summaries</referenceName>
+        </templateDataProviders>
+        <versionNumber>2</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__flex</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>

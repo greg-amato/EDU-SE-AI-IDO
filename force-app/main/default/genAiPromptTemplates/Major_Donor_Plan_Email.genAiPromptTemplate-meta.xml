@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenAiPromptTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <developerName>Major_Donor_Plan_Email</developerName>
+    <masterLabel>Major Donor Plan Email</masterLabel>
+    <relatedEntity>Contact</relatedEntity>
+    <templateVersions>
+        <content>As the Major Gift Officer at Connected University, create a draft email for the upcoming meeting with Major Donor Riley Hernandez.
+
+Instructions:
+&quot;&quot;
+- Do not make any information up.
+- Make sure the email is brief and discusses what we will cover together
+&quot;&quot;
+
+Context Section 1: Donor Profile
+&quot;&quot;&quot;
+- Name: Riley Hernandez
+- Alma Mater: Connected University
+- Graduation Year: 2010
+- Degree: B.S. in Computer Science
+- Occupation: Founder and CEO of TechInnovate, a leading software development company
+- Interests: Technology in education, renewable energy, mentorship programs
+
+- Previous Donations:$50,000 to the Computer Science Department for scholarships in 2018. This led to a 20% increase in scholarship recipients&apos; graduation rates.
+$75,000 to the university&apos;s renewable energy research initiative in 2020, contributing to the development of two patent-pending renewable energy solutions.
+
+- Engagement: Attendance at 90% of university events over the past five years, with a focus on technology and innovation.
+Keynote speaker at the 2022 Connected University Tech Conference, rated as the top speaker by 85% of attendees.
+Mentors 5 students annually in the entrepreneurship program, with 3 mentees successfully launching startups.
+&quot;&quot;&quot;
+
+Context Section 2: Meeting Objectives
+&quot;&quot;&quot;
+- Purpose: To discuss Riley&apos;s continued support for the university, focusing on upcoming projects that align with his interests in technology and renewable energy.
+- Key Topics:Impact update of Riley&apos;s previous donations, with specific focus on metrics and testimonials.
+- Introduction to the new Technology in Education initiative, aiming to reduce the technology access gap by 50% in underrepresented communities.
+- Exploration of naming opportunities in the new innovation lab, expected to incubate 10-15 student startups annually.
+- Discussion on establishing a TechInnovate Scholarship for Women in STEM, targeting to increase female enrollment in STEM fields by 25% over the next five years.
+&quot;&quot;&quot;
+
+Context Section 3: Personalization Strategies
+&quot;&quot;&quot;
+- Acknowledgment: Customized thank you for Riley’s transformative contributions, emphasizing specific outcomes and personal stories where his impact was felt most.
+- Engagement: Share achievements of scholarship recipients and research breakthroughs as direct results of his support, including video testimonials.
+- Vision Sharing: Present a compelling vision for the Technology in Education initiative, with data-driven projections on its impact.
+- Partnership Opportunity: Propose a mentorship and internship program partnership with TechInnovate, showcasing potential benefits and alignment with Riley&apos;s passion for nurturing the next generation of tech leaders.
+&quot;&quot;&quot;
+</content>
+        <inputs>
+            <apiName>Sender</apiName>
+            <definition>SOBJECT://User</definition>
+            <referenceName>Input:Sender</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>Recipient</apiName>
+            <definition>SOBJECT://Contact</definition>
+            <referenceName>Input:Recipient</referenceName>
+            <required>true</required>
+        </inputs>
+        <inputs>
+            <apiName>RelatedObject</apiName>
+            <definition>SOBJECT://Account</definition>
+            <referenceName>Input:Account</referenceName>
+            <required>true</required>
+        </inputs>
+        <primaryModel>sfdc_ai__DefaultOpenAIGPT4</primaryModel>
+        <status>Published</status>
+        <versionNumber>1</versionNumber>
+    </templateVersions>
+    <type>einstein_gpt__salesEmail</type>
+    <visibility>Global</visibility>
+</GenAiPromptTemplate>
